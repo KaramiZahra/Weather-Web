@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- themify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                screens: {
+                    xl: { "max": '1200px' },
+                    lg: { "max": '992px' },
+                    md: { "max": '768px' },
+                    sm: { "max": '576px' },
+                },
+                extend: {}
+            }
+        }
+    </script>
+</head>
+
+<body class="font-mono">
+    <!-- main container  -->
+    <div
+        class="container h-[41rem] w-11/12 rounded-3xl mx-auto my-10 shadow-xl flex justify-between items-center lg:mt-4 md:flex-col md:h-full sm:mb-20">
+        <!-- left box  -->
+        <div
+            class="h-full w-8/12 bg-zinc-50 rounded-l-3xl px-8 py-6 lg:w-7/12 md:w-full md:rounded-none md:rounded-t-3xl md:h-max">
+            <!-- search box  -->
+            <div class="w-full h-10 bg-white border rounded-xl items-center justify-between px-3 mb-6 hidden md:flex">
+                <input type="text" placeholder="Search your location" class="outline-none text-xs w-full border-r pr-2">
+                <i class="bx bx-search text-neutral-500 ml-2 cursor-pointer"></i>
+            </div>
+            <!-- date  -->
+            <div class="text-neutral-800 flex items-center justify-between lg:text-sm sm:flex-col-reverse">
+                <div>
+                    <div class="ti-location-pin inline-block"></div>
+                    <p class="inline-block">Tehran</p>
+                </div>
+                <div class="flex items-center">
+                    <p class="pr-3">11 Feb 2024 | 14:36</p>
+                    <i
+                        class="bx bx-sun text-neutral-600 text-base bg-neutral-300 rounded-full px-1 cursor-pointer hover:bg-neutral-400"></i>
+                </div>
+            </div>
+            <!-- current temp  -->
+            <div class="flex justify-center items-center mt-32 lg:mt-40 md:mt-30 sm:flex-col sm:mt-24">
+                <!-- temperature  -->
+                <div class="text-9xl font-bold text-neutral-500 lg:text-8xl sm:text-7xl">2°C</div>
+                <div class="text-neutral-400 ml-8 lg:text-sm sm:text-xs sm:ml-0 sm:mt-3">
+                    <!-- wind  -->
+                    <div><i class="bx bx-wind"></i> 70.2 km/h</div>
+                    <!-- humidity  -->
+                    <div><i class="bx bx-droplet"></i> 100 %</div>
+                    <!-- min max temp  -->
+                    <div><i class="fa-solid fa-temperature-three-quarters mr-0.5 ml-1"></i> 1°C / 4°C</div>
+                </div>
+            </div>
+            <!-- current status  -->
+            <div
+                class="text-center text-neutral-700 text-5xl font-medium mt-8 pb-16 border-b lg:text-3xl sm:text-xl sm:pb-8">
+                Thunderstorm
+            </div>
+            <!-- hourly section  -->
+            <div class="w-full flex items-center justify-start overflow-x-scroll">
+                <!-- hourly box  -->
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">15:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">16:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">17:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">18:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">19:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">20:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">21:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">22:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <div
+                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36">
+                    <div class="text-neutral-800 border-b mb-2 sm:mb-0">23:00</div>
+                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16"><img
+                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
+                    <div class="text-neutral-400">3°C</div>
+                </div>
+                <!--  -->
+            </div>
+        </div>
+        <!-- right box  -->
+        <div
+            class="h-full w-4/12 bg-neutral-100 rounded-r-3xl shadow-inner flex flex-col items-center justify-center px-8 py-6 lg:px-4 lg:w-5/12 md:w-full md:rounded-none md:rounded-b-3xl">
+            <!-- search box  -->
+            <div
+                class="w-11/12 h-28 bg-white border rounded-xl flex items-center justify-between px-3 mb-10 lg:w-full md:hidden">
+                <input type="text" placeholder="Search your location" class="outline-none text-sm w-full border-r pr-2">
+                <i class="bx bx-search text-neutral-500 ml-2 cursor-pointer"></i>
+            </div>
+            <!-- 15 days forecast  -->
+            <div class="w-11/12 block rounded-xl overflow-auto lg:w-full">
+                <div class="text-neutral-700 font-medium pb-4 pl-2 md:pt-6">15 Days Forecast</div>
+                <!-- days container  -->
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 sm:grid-cols-1">
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 11</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 12</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 13</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 14</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 15</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 16</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 17</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 18</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 19</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 20</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 21</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 22</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 23</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 24</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm">
+                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1">
+                            <img src="./assests/img/Rain.png" alt="Weather">
+                        </div>
+                        <div class="flex justify-center items-center sm:block">
+                            <div class="border-r pr-6 pl-2 md:border-none">
+                                <p>Friday, Feb 25</p>
+                                <p>Rain</p>
+                            </div>
+                            <div class="pl-8 sm:flex sm:pl-2">
+                                <p>2°C</p>
+                                <p class="hidden sm:inline-block"> / </p>
+                                <p>5°C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
