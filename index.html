@@ -34,94 +34,49 @@
 <body class="font-mono dark:bg-black">
     <!-- main container  -->
     <div
-        class="container h-[41rem] w-11/12 rounded-3xl mx-auto my-10 shadow-xl flex justify-between items-center lg:mt-4 md:flex-col md:h-full sm:mb-20 dark:shadow-slate-800">
+        class="h-96 w-6/12 rounded-3xl mx-auto my-10 shadow-xl flex justify-between items-center lg:w-8/12 lg:mt-4 md:flex-col md:h-full md:mt-6 sm:w-11/12 sm:mb-20 dark:shadow-slate-800 container">
         <!-- left box  -->
-        <div
-            class="h-full w-8/12 bg-zinc-50 rounded-l-3xl px-8 py-6 lg:w-7/12 md:w-full md:rounded-none md:rounded-t-3xl md:h-max dark:bg-slate-900">
+        <div class="h-full w-full bg-zinc-50 rounded-3xl px-8 py-6 md:w-full md:h-max dark:bg-slate-900 left-box">
             <!-- search box  -->
-            <div
-                class="w-full h-10 bg-white border rounded-xl items-center justify-between px-3 mb-6 hidden md:flex dark:bg-slate-800 dark:border-slate-950">
-                <input type="text" placeholder="Search your location"
-                    class="bg-transparent outline-none text-xs w-full border-r pr-2 dark:border-slate-950">
-                <i class="bx bx-search text-neutral-500 ml-2 cursor-pointer dark:text-slate-950"></i>
+            <div class="w-full flex items-center justify-center dark:bg-slate-900">
+                <div
+                    class="w-11/12 h-10 bg-white border rounded-xl flex items-center justify-between px-3 mb-10 lg:w-full dark:bg-slate-800 dark:border-slate-950">
+                    <input type="text" placeholder="Search your location"
+                        class="bg-transparent outline-none text-sm w-full h-full border-r pr-2 dark:border-slate-950 dark:text-white search-input">
+                    <i class="bx bx-search text-neutral-500 ml-2 cursor-pointer dark:text-slate-950"></i>
+                </div>
             </div>
             <!-- date  -->
             <div
                 class="text-neutral-800 flex items-center justify-between lg:text-sm sm:flex-col-reverse dark:text-slate-100">
                 <div>
                     <div class="ti-location-pin inline-block"></div>
-                    <p class="inline-block">Tehran</p>
+                    <p class="inline-block sm:mt-4 requested-loc">City. Country</p>
                 </div>
                 <div class="flex items-center">
-                    <p class="pr-3">11 Feb 2024 | 14:36</p>
+                    <p class="current-time pr-3">11 Feb 2024 | 14:36</p>
                     <i
                         class="bx bx-moon text-neutral-600 text-base bg-neutral-300 rounded-full px-1 cursor-pointer hover:bg-neutral-400 dark:text-slate-300 dark:bg-slate-800 dark:hover:bg-slate-950"></i>
                 </div>
             </div>
             <!-- current temp  -->
-            <div class="flex justify-center items-center mt-32 lg:mt-40 md:mt-30 sm:flex-col sm:mt-24">
-                <!-- temperature  -->
-                <div class="text-9xl font-bold text-neutral-500 lg:text-8xl sm:text-7xl dark:text-slate-200">2°C</div>
-                <div class="text-neutral-400 ml-8 lg:text-sm sm:text-xs sm:ml-0 sm:mt-3 dark:text-slate-400">
-                    <!-- wind  -->
-                    <div><i class="bx bx-wind"></i> 70.2 km/h</div>
-                    <!-- humidity  -->
-                    <div><i class="bx bx-droplet"></i> 100 %</div>
-                    <!-- min max temp  -->
-                    <div><i class="fa-solid fa-temperature-three-quarters mr-0.5 ml-1"></i> 1°C / 4°C</div>
-                </div>
+            <div class="flex justify-center items-center mt-32 lg:mt-40 md:mt-30 sm:flex-col sm:mt-24 current-temp">
+                <!-- temp will be created in this part -->
             </div>
             <!-- current status  -->
-            <div
-                class="text-center text-neutral-700 text-5xl font-medium mt-8 pb-16 border-b lg:text-3xl sm:text-xl sm:pb-8 dark:text-slate-300">
-                Thunderstorm
-            </div>
-            <!-- hourly section  -->
-            <div class="w-full flex items-center justify-start overflow-x-scroll">
-                <!-- hourly box  -->
-                <div
-                    class="h-40 w-24 mt-5 mx-2 py-3 flex flex-col items-center justify-between rounded-xl border-zinc-100 border-2 hover:border-zinc-200 lg:text-sm sm:p-1 sm:h-36 dark:border-slate-800 dark:hover:border-slate-950">
-                    <div class="text-neutral-800 border-b mb-2 sm:mb-0 dark:text-slate-300">15:00</div>
-                    <div class="h-20 w-20 mx-auto p-2 rounded-xl bg-zinc-100 sm:h-16 sm:w-16 dark:bg-slate-700"><img
-                            src="./assests/img/Thunderstorm.png" alt="Weather"></div>
-                    <div class="text-neutral-400 dark:text-slate-400">3°C</div>
-                </div>
-                <!--  -->
+            <div class="flex justify-center items-center mt-8 md:mb-8 current-status">
+                <!-- status will be created in this part -->
             </div>
         </div>
         <!-- right box  -->
         <div
-            class="h-full w-4/12 bg-neutral-100 rounded-r-3xl shadow-inner flex flex-col items-center justify-center px-8 py-6 lg:px-4 lg:w-5/12 md:w-full md:rounded-none md:rounded-b-3xl dark:bg-slate-950">
-            <!-- search box  -->
-            <div
-                class="w-11/12 h-28 bg-white border rounded-xl flex items-center justify-between px-3 mb-10 lg:w-full md:hidden dark:bg-slate-800 dark:border-slate-950">
-                <input type="text" placeholder="Search your location"
-                    class="bg-transparent outline-none text-sm w-full border-r pr-2 dark:border-slate-950">
-                <i class="bx bx-search text-neutral-500 ml-2 cursor-pointer dark:text-slate-950"></i>
-            </div>
-            <!-- 15 days forecast  -->
+            class="h-full w-4/12 bg-neutral-100 rounded-r-3xl shadow-inner flex-col items-center justify-center px-8 py-6 hidden lg:px-4 lg:w-5/12 md:w-full md:rounded-none md:rounded-b-3xl dark:bg-slate-950 right-box">
+            <!-- 5 days forecast  -->
             <div class="w-11/12 block rounded-xl overflow-auto lg:w-full">
-                <div class="text-neutral-700 font-medium pb-4 pl-2 md:pt-6 dark:text-slate-200">15 Days Forecast</div>
+                <div class="text-neutral-700 font-medium pb-4 pl-2 dark:text-slate-200">5 Days Forecast</div>
                 <!-- days container  -->
-                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 sm:grid-cols-1">
-                    <div
-                        class="flex justify-between items-center bg-white rounded-xl border-white border-2 py-2 px-3 mb-4 hover:border-neutral-200 lg:text-sm dark:bg-slate-900 dark:border-slate-900 dark:hover:border-slate-800">
-                        <div class="h-16 w-16 rounded-lg bg-zinc-100 p-1 dark:bg-slate-700">
-                            <img src="./assests/img/Rain.png" alt="Weather">
-                        </div>
-                        <div class="flex justify-center items-center sm:block dark:text-slate-300">
-                            <div class="border-r pr-6 pl-2 md:border-none">
-                                <p>Friday, Feb 11</p>
-                                <p>Rain</p>
-                            </div>
-                            <div class="pl-8 sm:flex sm:pl-2">
-                                <p>2°C</p>
-                                <p class="hidden sm:inline-block"> / </p>
-                                <p>5°C</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--  -->
+                <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-4 sm:grid-cols-1 days-container">
+                    <!-- days will be created in this part  -->
                 </div>
             </div>
         </div>
