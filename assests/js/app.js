@@ -132,7 +132,7 @@ const rightBox = document.querySelector(".right-box");
 
 const showCurrData = (data) => {
   requestedLoc.innerHTML = `${data.name}. ${data.sys.country}`;
-  requestedLoc.style.color = "#000";
+  requestedLoc.style.color = "inherit";
   currentTemp.innerHTML = "";
   currentStatus.innerHTML = "";
 
