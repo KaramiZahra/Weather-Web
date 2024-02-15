@@ -88,6 +88,8 @@ searchBtn.addEventListener("click", () => {
 });
 
 // fetch data
+const requestedLoc = document.querySelector(".requested-loc");
+
 const fetchData = () => {
   searchValue = searchInput.value;
 
@@ -100,7 +102,11 @@ const fetchData = () => {
       showCurrData(res1);
       // console.log(res1);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      requestedLoc.innerHTML = "Invalid Loc!";
+      requestedLoc.style.color = "#E78895";
+      // console.log(err);
+    });
 
   // https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
   fetch(
@@ -111,11 +117,13 @@ const fetchData = () => {
       showForecastData(res2);
       // console.log(res2);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      hideRightBox();
+      // console.log(res2);
+    });
 };
 
 // show current data
-const requestedLoc = document.querySelector(".requested-loc");
 const currentTemp = document.querySelector(".current-temp");
 const currentStatus = document.querySelector(".current-status");
 const container = document.querySelector(".container");
@@ -124,17 +132,11 @@ const rightBox = document.querySelector(".right-box");
 
 const showCurrData = (data) => {
   requestedLoc.innerHTML = `${data.name}. ${data.sys.country}`;
+  requestedLoc.style.color = "#000";
   currentTemp.innerHTML = "";
   currentStatus.innerHTML = "";
 
-  // responsive style for boxes
-  container.classList.replace("w-6/12", "w-11/12");
-  container.classList.replace("h-96", "h-[36rem]");
-  container.classList.remove("lg:w-8/12");
-  leftBox.classList.replace("w-full", "w-8/12");
-  leftBox.classList.replace("rounded-3xl", "rounded-l-3xl");
-  leftBox.classList.add("lg:w-7/12", "md:rounded-none", "md:rounded-t-3xl");
-  rightBox.style.display = "flex";
+  showRightBox();
 
   // current temperature
   currentTemp.insertAdjacentHTML(
@@ -234,4 +236,26 @@ const showWeatherCondition = (condition) => {
   }
 
   return weatherCondition;
+};
+
+// responsive style when the right box is either shown or hidden
+const showRightBox = () => {
+  container.classList.replace("w-6/12", "w-11/12");
+  container.classList.replace("h-96", "h-[36rem]");
+  container.classList.remove("lg:w-8/12");
+  leftBox.classList.replace("w-full", "w-8/12");
+  leftBox.classList.replace("rounded-3xl", "rounded-l-3xl");
+  leftBox.classList.add("lg:w-7/12", "md:rounded-none", "md:rounded-t-3xl");
+  rightBox.style.display = "flex";
+};
+const hideRightBox = () => {
+  container.classList.replace("w-11/12", "w-6/12");
+  container.classList.replace("h-[36rem]", "h-96");
+  container.classList.add("lg:w-8/12");
+  leftBox.classList.replace("w-8/12", "w-full");
+  leftBox.classList.replace("rounded-l-3xl", "rounded-3xl");
+  leftBox.classList.remove("lg:w-7/12", "md:rounded-none", "md:rounded-t-3xl");
+  rightBox.style.display = "none";
+  currentTemp.innerHTML = "";
+  currentStatus.innerHTML = "";
 };
